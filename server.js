@@ -1,6 +1,10 @@
 const express = require('express');
 const PORT = process.env.PORT || 441;
+
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const { animals } = require('./data/animals');
 
 // Filters the query
@@ -66,3 +70,4 @@ app.post('/api/animals', (req, res) => {
 app.listen(PORT, () => {
     console.log('API server now on ${PORT}!');
 });
+
