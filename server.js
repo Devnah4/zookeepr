@@ -1,4 +1,5 @@
 const express = require('express');
+const PORT = process.env.PORT || 441;
 const app = express();
 const { animals } = require('./data/animals');
 
@@ -41,6 +42,6 @@ app.get('/api/animals', (req, res) => {
 })
 
 // Adds the port
-app.listen(441, () => {
-    console.log('Server is running on port 441');
-})
+app.listen(PORT, () => {
+    console.log('API server now on ${PORT}!');
+});
